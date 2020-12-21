@@ -9,12 +9,18 @@
                 <strong>Followers: </strong> {{ followers }}
             </div>
         </div>
+        <div class="user-profile__twoots-wrapper">
+            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" />
+        </div>
     </div>
 </template>
 
-<script>
+<script>    
+import TwootItem from "./TwootItem";
+
 export default {
   name: 'UserProfile',
+  components: { TwootItem },
   data() {
     return {
       followers: 0,
@@ -24,7 +30,11 @@ export default {
         firstName: 'Hank',
         lastName: 'Lin',
         email: 'hanklin@gmail.com',
-        isAdmin: true
+        isAdmin: true,
+        twoots: [
+            { id: 1, content: "Twotter is amazing" },
+            { id: 2, content: "Don't forget to use keep learning!" }
+        ]
       }
     }
   },
@@ -66,6 +76,10 @@ export default {
   padding: 50px 5%;
 }
 
+.user-profile__twoots_wrapper {
+    padding: 15px;
+}
+
 .user-profile__user-panel {
   display: flex;
   flex-direction: column;
@@ -74,6 +88,7 @@ export default {
   background-color: white;
   border-radius: 5px;
   border: 1px solid #dfe3eb;
+  line-height: 1cm;
 }
 
 .user-profile__admin-badge {
@@ -86,6 +101,6 @@ export default {
 }
 
 h1{
-  margin: 0;
+  margin: 5px;
 }
 </style>
