@@ -2,10 +2,11 @@
     <div class="twoot-item">
         <div class="user-profile__twoot">
             <div class="twoot-item__user">
-                @{{ username }}
+                {{ username }}
             </div>
-            <div class="twoot-item__content">
-                {{ twoot.content }}
+            <div class="">
+               <!-- 沒有這個東西 render 不出來 -->
+                <!-- {{ twoot.content }} -->
             </div>
         </div>
     </div>
@@ -21,6 +22,7 @@ export default {
         }
     },
     twoot: {
+        // 沒有 content 上面拿不到
         type: Object,
         required: true
     }
