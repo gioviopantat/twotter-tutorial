@@ -5,8 +5,7 @@
                 {{ username }}
             </div>
             <div class="">
-               <!-- 沒有這個東西 render 不出來 -->
-                <!-- {{ twoot.content }} -->
+                {{ twoot.content }}
             </div>
         </div>
     </div>
@@ -19,13 +18,13 @@ export default {
         username: {
             type: String,
             required: true
-        }
-    },
-    twoot: {
-        // 沒有 content 上面拿不到
+        },
+         twoot: {
         type: Object,
         required: true
     }
+    },
+   
 };
 </script>
 
