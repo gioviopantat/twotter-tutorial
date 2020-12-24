@@ -1,5 +1,5 @@
 <template>
-    <div class="twoot-item">
+    <div class="twoot-item" @click="favoriteTwoot(twoot.id)">
         <div class="user-profile__twoot">
             <div class="twoot-item__user">
                 {{ username }}
@@ -24,19 +24,28 @@ export default {
             required: true
         }
     },
+    method: {
+        favoriteTwoot(id) {
+            this.$emit('favorite', id)
+        }
+    }
    
 };
 </script>
 
 <style>
 .twoot-item {
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     border-radius: 5px;
     border: 2px solid #74a0d7;
     box-sizing: border-box;
     cursor: pointer;
     transition: all 0.25s ease;
+    max-width: 1000px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .twoot-item:hover {

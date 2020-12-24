@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="user-profile__twoots-wrapper">
-            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" />
+            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" @favorite='toggleFavorite'/>
         </div>
     </div>
 </template>
@@ -59,6 +59,9 @@ export default {
     },
     unfollowUser() {
       this.followers--
+    },
+    toggleFavorite(id) {
+      console.log(`Favorited Tweet #${id}`)
     }
   },
   mounted() {
@@ -72,12 +75,12 @@ export default {
 .user-profile {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  width: 100%;
-  padding: 50px 5%;
+  max-width:100%;
+  padding: 1em ;
 }
 
 .user-profile__twoots_wrapper {
-    padding: 15px;
+    padding: 115px;
 }
 
 .user-profile__user-panel {
