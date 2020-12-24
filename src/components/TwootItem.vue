@@ -4,7 +4,7 @@
             <div class="twoot-item__user">
                 {{ username }}
             </div>
-            <div class="">
+            <div class="twoot-item__content">
                 {{ twoot.content }}
             </div>
         </div>
@@ -19,10 +19,10 @@ export default {
             type: String,
             required: true
         },
-         twoot: {
-        type: Object,
-        required: true
-    }
+        twoot: {
+            type: Object,
+            required: true
+        }
     },
    
 };
@@ -33,13 +33,14 @@ export default {
     padding: 20px;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid #df3e8d;
+    border: 2px solid #74a0d7;
+    box-sizing: border-box;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
 .twoot-item:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
 }
 
 .twoot-item__user {

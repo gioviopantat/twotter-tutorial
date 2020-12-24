@@ -33,7 +33,7 @@ export default {
         isAdmin: true,
         twoots: [
             { id: 1, content: "Twotter is amazing" },
-            { id: 2, content: "Don't forget to use keep learning!" }
+            { id: 2, content: "Don't forget to keep learning!" }
         ]
       }
     }
@@ -87,8 +87,13 @@ export default {
   padding: 20px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid #dfe3eb;
+  border: 2px solid #74a0d7;
   line-height: 1cm;
+  transition: all 0.25s ease;
+}
+
+.user-profile__user-panel:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .user-profile__admin-badge {
