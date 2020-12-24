@@ -16,15 +16,15 @@ export default {
     name: "TwootItem",
     props: {
         username: {
-            type: String,
-            required: true
+          type: String,
+          required: true
         },
-         twoot: {
-        type: Object,
-        required: true
+        twoot: {
+          type: Object,
+          required: true
     }
     },
-   
+
 };
 </script>
 
