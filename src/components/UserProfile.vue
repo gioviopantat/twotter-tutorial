@@ -10,12 +10,12 @@
             </div>
         </div>
         <div class="user-profile__twoots-wrapper">
-            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" @favorite='toggleFavorite'/>
+            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" @favorite="toggleFavorite"/>
         </div>
     </div>
 </template>
 
-<script>    
+<script>
 import TwootItem from "./TwootItem";
 
 export default {
