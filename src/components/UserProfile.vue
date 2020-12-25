@@ -8,8 +8,8 @@
             <div class="user-profile__follower-count">
                 <strong>Followers: </strong> {{ followers }}
             </div>
-            <form class="user-profile__create-twoot" @submit.prevent="createNewTwoot">
-              <label for="newTwoot"><strong>New Twoot</strong></label>
+            <form class="user-profile__create-twoot" @submit.prevent="createNewTwoot" :class="{ '--exceeded':twootCharacterCount > 180 }">
+              <label for="newTwoot"><strong>New Twoot</strong> ({{ twootCharacterCount }}/180)</label>
               <textarea id="newTwoot" row="4" v-model="newTwootContent"/>
 
               <div class="user-profile__create-twoot-type">
@@ -77,8 +77,8 @@ export default {
     }
   },
   computed: {
-    fullName() {
-      return `${this.user.firstName} ${this.user.lastName}`;
+    twootCharacterCount() {
+      return this.newTwootContent.length;
     }
   },
   methods: {
@@ -108,52 +108,67 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .user-profile {
   display: grid;
   grid-template-columns: 1fr 3fr;
   max-width:100%;
   padding: 1em ;
-}
 
-.user-profile__twoots_wrapper {
+  .user-profile__twoots_wrapper {
     padding: 115px;
-}
+  }
 
-.user-profile__user-panel {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  border: 2px solid #74a0d7;
-  line-height: 1cm;
-  transition: all 0.25s ease;
-}
+  .user-profile__user-panel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #74a0d7;
+    line-height: 1cm;
+    transition: all 0.25s ease;
 
-.user-profile__create-twoot {
-  display: flex;
-  flex-direction: column;
-  border-top: 2px solid #74a0d7;
-  padding-top: 20px;
-}
+    .user-profile__create-twoot {
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid #74a0d7;
+      padding-top: 20px;
 
-/* .user-profile__user-panel:hover {
-  transform: scale(1.1, 1.1);
-} */
+      &.--exceeded{
+        color: red;
+      }
+      
+    }
 
-.user-profile__admin-badge {
+    h1{
+      margin: 5px;
+    }
+
+    .user-profile__admin-badge {
     background: rgb(112, 39, 185);
     color: white;
     border-radius: 5px;
     margin-right: auto;
     padding: 0 10px;
     font-weight: bold;
+    }
+  }
 }
 
-h1{
-  margin: 5px;
-}
+
+
+
+
+
+
+/* .user-profile__user-panel:hover {
+  transform: scale(1.1, 1.1);
+} */
+
+
+
+
 </style>
