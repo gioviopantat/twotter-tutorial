@@ -2,7 +2,7 @@
     <div class="twoot-item" @click="emit(twoot.id)">
         <div class="user-profile__twoot">
             <div class="twoot-item__user">
-                {{ username }}
+                @{{ username }}
             </div>
             <div class="twoot-item__content">
                 {{ twoot.content }}
@@ -26,7 +26,6 @@ export default {
     },
     methods: {
       emit(id) {
-        // console.log(id);
          this.$emit('favorite', id)
       }
     }
@@ -34,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .twoot-item {
     padding: 10px;
     background-color: white;
