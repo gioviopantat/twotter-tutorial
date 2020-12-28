@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import UserProfile from "./components/UserProfile"
+import UserProfile from "./components/UserProfile";
+
 export default {
   name: 'App',
   components: { UserProfile }
