@@ -1,10 +1,10 @@
 <template>
-    <div class="twoot-item">
+    <div class="twoot-item" @click="emit(twoot.id)">
         <div class="user-profile__twoot">
             <div class="twoot-item__user">
-                {{ username }}
+                @{{ username }}
             </div>
-            <div class="">
+            <div class="twoot-item__content">
                 {{ twoot.content }}
             </div>
         </div>
@@ -20,29 +20,42 @@ export default {
           required: true
         },
         twoot: {
-          type: Object,
-          required: true
-    }
+            type: Object,
+            required: true
+        }
     },
+    methods: {
+      emit(id) {
+         this.$emit('favorite', id)
+      }
+    }
 
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .twoot-item {
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid #df3e8d;
+    border: 2px solid #74a0d7;
+    box-sizing: border-box;
     cursor: pointer;
     transition: all 0.25s ease;
+    max-width: 1000px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    &:hover {
+        transform: scale(1.05, 1.05);
+    }
+
+
+    .twoot-item__user {
+        font-weight: bold;
+    }
 }
 
-.twoot-item:hover {
-    transform: scale(1.1, 1.1);
-}
 
-.twoot-item__user {
-    font-weight: bold;
-}
 </style>

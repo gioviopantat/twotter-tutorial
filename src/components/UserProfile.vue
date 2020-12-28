@@ -8,14 +8,36 @@
             <div class="user-profile__follower-count">
                 <strong>Followers: </strong> {{ followers }}
             </div>
+            <form class="user-profile__create-twoot" @submit.prevent="createNewTwoot" :class="{ '--exceeded':twootCharacterCount > 180 }">
+              <label for="newTwoot"><strong>New Twoot</strong> ({{ twootCharacterCount }}/180)</label>
+              <textarea id="newTwoot" row="4" v-model="newTwootContent"/>
+
+              <div class="user-profile__create-twoot-type">
+                <label for="newTootType"><strong>Type: </strong></label>
+                <select id="newTwootType" v-model="selectedTwootType">
+                  <option :value="option.value" v-for="(option, index) in twootType" :key="index">
+                    {{ option.name }}
+                  </option>
+                </select>
+              </div>
+
+              <button>
+                Twoot!
+              </button>
+            </form>
         </div>
         <div class="user-profile__twoots-wrapper">
-            <TwootItem v-for="twoot in user.twoots" :key="twoot.id" :username="user.username" :twoot="twoot" />
+            <TwootItem 
+              v-for="twoot in user.twoots" 
+              :key="twoot.id" 
+              :username="user.username" 
+              :twoot="twoot" 
+              @favorite="toggleFavorite"/>
         </div>
     </div>
 </template>
 
-<script>    
+<script>
 import TwootItem from "./TwootItem";
 
 export default {
@@ -23,6 +45,12 @@ export default {
   components: { TwootItem },
   data() {
     return {
+      newTwootContent: '',
+      selectedTwootType: 'instant',
+      twootType: [
+        { value: 'draft', name: 'Draft' },
+        { value: 'instant', name: 'Instant Twoot' }
+      ],
       followers: 0,
       user: {
         id: 1,
@@ -33,7 +61,7 @@ export default {
         isAdmin: true,
         twoots: [
             { id: 1, content: "Twotter is amazing" },
-            { id: 2, content: "Don't forget to use keep learning!" }
+            { id: 2, content: "Don't forget to keep learning!" }
         ]
       }
     }
@@ -49,8 +77,8 @@ export default {
     }
   },
   computed: {
-    fullName() {
-      return `${this.user.firstName} ${this.user.lastName}`;
+    twootCharacterCount() {
+      return this.newTwootContent.length;
     }
   },
   methods: {
@@ -59,7 +87,19 @@ export default {
     },
     unfollowUser() {
       this.followers--
-    }
+    },
+    toggleFavorite(id) {
+      console.log(`Favorited Tweet #${id}`)
+    },
+    createNewTwoot() {
+      if (this.newTwootContent && this.selectedTwootType !== 'draft') {
+        this.user.twoots.unshift({
+          id: this.user.twoots.length + 1,
+          content: this.newTwootContent
+        })
+        this.newTwootContent = '';
+      }
+    } 
   },
   mounted() {
     this.followUser()
@@ -68,39 +108,67 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
 .user-profile {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  width: 100%;
-  padding: 50px 5%;
-}
+  max-width:100%;
+  padding: 1em ;
 
-.user-profile__twoots_wrapper {
-    padding: 15px;
-}
+  .user-profile__twoots_wrapper {
+    padding: 115px;
+  }
 
-.user-profile__user-panel {
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid #dfe3eb;
-  line-height: 1cm;
-}
+  .user-profile__user-panel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #74a0d7;
+    line-height: 1cm;
+    transition: all 0.25s ease;
 
-.user-profile__admin-badge {
+    .user-profile__create-twoot {
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid #74a0d7;
+      padding-top: 20px;
+
+      &.--exceeded{
+        color: red;
+      }
+      
+    }
+
+    h1{
+      margin: 5px;
+    }
+
+    .user-profile__admin-badge {
     background: rgb(112, 39, 185);
     color: white;
     border-radius: 5px;
     margin-right: auto;
     padding: 0 10px;
     font-weight: bold;
+    }
+  }
 }
 
-h1{
-  margin: 5px;
-}
+
+
+
+
+
+
+/* .user-profile__user-panel:hover {
+  transform: scale(1.1, 1.1);
+} */
+
+
+
+
 </style>
