@@ -1,4 +1,4 @@
-# twotter-tutorial
+# twooter_turotial
 
 ## Project setup
 ```
