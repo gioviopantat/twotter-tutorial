@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <HelloWorld/>
+      <background/>
       <pagination/>
     </v-main>
   </v-app>
@@ -10,13 +11,15 @@
 <script>
 import HelloWorld from './components/HelloWorld';
 import pagination from './components/pagination';
+import background from './components/background';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
-    pagination
+    pagination,
+    background
   },
 
   data: () => ({

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <v-app id="inspire">
+        <v-app id="pagination">
             <div class="text-center">
                 <v-pagination
                  v-model="page"
