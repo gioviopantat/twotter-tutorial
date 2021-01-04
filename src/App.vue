@@ -11,6 +11,10 @@
 
 <script>
 import Parallax from './components/Parallax.vue';
+import Vue from 'vue'
+import VueKinesis from 'vue-kinesis'
+
+Vue.use(VueKinesis)
 // import HelloWorld from './components/HelloWorld';
 // import pagination from './components/pagination';
 // import background from './components/background';
