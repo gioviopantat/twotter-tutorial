@@ -1,7 +1,7 @@
 <template>
     <div class="root">
-        <img src='src\assets\bg.jpg'/>
-        <!-- <img class='car' src='src\assets\car.png'/> -->
+        <img class='car' ref="background" src='../../static/car2.png'/>
+        <img class="background" ref="background" src="../../static/bg.jpg">
     </div>
 </template>
 
@@ -10,7 +10,11 @@
     name: 'parallax',
 
     data: () => ({
-
+       
     })
   }
 </script>
+
+<style scoped>
+
+</style>
