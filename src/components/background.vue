@@ -1,8 +1,6 @@
 <template>
     <div id="app">
-        <v-app id="background">
-            <v-parallax src="../../static/background.jpg"></v-parallax>
-        </v-app>
+      <!-- <v-parallax id="background" src="../../static/car.png"></v-parallax> -->
     </div>
 </template>
 
@@ -18,7 +16,8 @@
 
 <style scoped>
   .background {
-    display: flex;
     position: absolute;
+    max-width: 100%;
+    max-height: 500px;
   }
 </style>

@@ -4,8 +4,9 @@
       <!-- <HelloWorld/>
       <pagination/> -->
       <!-- <Parallax1/> -->
-      <background/>
+      <!-- <background/> -->
       <index/>
+      <!-- <car/> -->
     </v-main>
   </v-app>
 </template>
@@ -13,9 +14,9 @@
 <script>
 // import Parallax1 from './components/Parallax1.vue';
 import index from './components/index';
-import background from './components/background';
 import Vue from 'vue';
 import VueKinesis from 'vue-kinesis';
+// import car from './components/car';
 
 Vue.use(VueKinesis)
 // import HelloWorld from './components/HelloWorld';
@@ -29,12 +30,13 @@ export default {
     // Parallax1,
     // HelloWorld,
     // pagination,
-    background,
+    // background,
+    // car,
     index
   },
 
   data: () => ({
-    // v0: true,
+
   })
 };
 </script>
