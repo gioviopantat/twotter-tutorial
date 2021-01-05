@@ -2,17 +2,20 @@
   <v-app>
     <v-main>
       <!-- <HelloWorld/>
-      <background/>
       <pagination/> -->
-      <Parallax/>
+      <!-- <Parallax1/> -->
+      <background/>
+      <index/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Parallax from './components/Parallax.vue';
-import Vue from 'vue'
-import VueKinesis from 'vue-kinesis'
+// import Parallax1 from './components/Parallax1.vue';
+import index from './components/index';
+import background from './components/background';
+import Vue from 'vue';
+import VueKinesis from 'vue-kinesis';
 
 Vue.use(VueKinesis)
 // import HelloWorld from './components/HelloWorld';
@@ -23,10 +26,11 @@ export default {
   name: 'App',
 
   components: {
-    Parallax
+    // Parallax1,
     // HelloWorld,
     // pagination,
-    // background
+    background,
+    index
   },
 
   data: () => ({

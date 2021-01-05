@@ -1,24 +1,14 @@
 <template>
-    <div class="root">
-        <!-- <img class="background" ref="background" src="../../static/bg.jpg"/>
-        <img class="foreground" ref="foreground" src='../../static/car2.png'/> -->
-      <kinesis-container>
-        Here, you can put
-        <kinesis-element :strength="10">
-          whatever
-        </kinesis-element>
-        <kinesis-element :strength="20">
-          content!
-        </kinesis-element>
-      </kinesis-container>
-        
-    </div>
+  <div class="root">
+    <img class="background" ref="background" src="../../static/bg.jpg"/>
+    <img class="foreground" ref="foreground" src='../../static/car2.png'/>
+  </div>
 </template>
 
 <script>
 export default {
 
-name: 'parallax',
+name: 'parallax1',
 data: () => ({
 
        
@@ -48,5 +38,10 @@ data: () => ({
     max-width: 70%;
     max-height: 70%;
     z-index: 2;
+  }
+  .bigDesign {
+    position: fixed;
+    top: 500px;
+    z-index: 3;
   }
 </style>

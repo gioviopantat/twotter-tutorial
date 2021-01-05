@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <v-app id="background">
-            <v-parallax src="https://wallpaperaccess.com/full/1713248.jpg"></v-parallax>
+            <v-parallax src="../../static/background.jpg"></v-parallax>
         </v-app>
     </div>
 </template>
@@ -15,3 +15,10 @@
     }),
   }
 </script>
+
+<style scoped>
+  .background {
+    display: flex;
+    position: absolute;
+  }
+</style>
