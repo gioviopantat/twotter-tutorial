@@ -5,17 +5,18 @@
       <pagination/> -->
       <!-- <Parallax1/> -->
       <!-- <background/> -->
-      <index/>
+      <!-- <index/> -->
       <!-- <car/> -->
+      <loginPage/>
     </v-main>
   </v-app>
 </template>
 
 <script>
 // import Parallax1 from './components/Parallax1.vue';
-import index from './components/index';
 import Vue from 'vue';
 import VueKinesis from 'vue-kinesis';
+import loginPage from './components/loginPage.vue';
 // import car from './components/car';
 
 Vue.use(VueKinesis)
@@ -32,7 +33,8 @@ export default {
     // pagination,
     // background,
     // car,
-    index
+    // index,
+    loginPage
   },
 
   data: () => ({
