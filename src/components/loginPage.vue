@@ -37,7 +37,7 @@ export default {
     .loginForm {
         width: 500px;
         height: 500px;
-        background: white);
+        background: white;
         text-align: center;
         padding-top: 50px;
         border-radius: 10px;
