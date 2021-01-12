@@ -1,16 +1,30 @@
 <template>
-    <v-app>
+    <v-app class="root" style="backgroundColor: #b8b7b7">
         <div class="loginForm">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
             <h1 class="header1">Login</h1>
-            <input class="usernameBlock" type="text" placeholder="Username"/>
+            <v-text-field
+            class="usernameBlock"
+            label="Outlined"
+            placeholder="Username"
+            outlined
+            ></v-text-field>
             <br/>
-            <input class="passwordBlock" type="password" placeholder="Password"/>
+            <v-divider class="login-devider"/>
+            <v-text-field
+            class="passwordBlock"
+            label="Outlined"
+            placeholder="Password"
+            outlined
+            ></v-text-field>
         </div>
     </v-app>
 </template>
 
 <script>
 export default {
+    
     name: 'loginPage',
 
     data: () => ({
@@ -23,7 +37,7 @@ export default {
     .loginForm {
         width: 500px;
         height: 500px;
-        background: rgb(93, 92, 94);
+        background: white);
         text-align: center;
         padding-top: 50px;
         border-radius: 10px;
@@ -39,8 +53,13 @@ export default {
     .header1 {
         top: 20px;
         align-content: center;
+        font-family: 'Roboto Mono', monospace;
     }
     input {
         margin-top: 5px;
+    }
+    .login-devider {
+        width: auto;
+        margin-top: 30px;
     }
 </style>
