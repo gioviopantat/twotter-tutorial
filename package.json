@@ -15,6 +15,7 @@
         "vue": "^2.6.11",
         "vue-kinesis": "^1.2.3",
         "vuefire": "^2.2.5",
+        "vuelidate": "^0.7.6",
         "vuetify": "^2.4.2"
     },
     "devDependencies": {
