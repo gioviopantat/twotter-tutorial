@@ -18,7 +18,8 @@
         "vuefire": "^2.2.5",
         "vuelidate": "^0.7.6",
         "vuetify": "^2.4.2",
-        "webpack": "^5.14.0"
+        "webpack": "^5.14.0",
+        "webpack-cli": "^4.3.1"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^4.5.10",
