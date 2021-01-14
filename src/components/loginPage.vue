@@ -28,6 +28,13 @@
         @input="$v.email.$touch()"
         @blur="$v.email.$touch()"
       ></v-text-field>
+      <v-text-field
+        label="Password"
+        type="password"
+        required
+        @input="$v.email.$touch()"
+        @blur="$v.email.$touch()"
+      ></v-text-field>
       <div class="button-submit-clear">
         <v-btn class="mr-4" @click="submit">
           submit
@@ -101,18 +108,16 @@ export default {
 }
 .loginForm {
   width: 500px;
-  height: 500px;
+  height: 600px;
   background: white;
   text-align: center;
   padding-top: 50px;
   border-radius: 10px;
   margin: 0 auto;
   box-shadow: 3px 3px 5px 6px #cccccc;
+  font-family: "Indie Flower", cursive;
 }
 .button-submit-clear {
-  margin-top: 50px;
-}
-.h1-container {
-  font-family: "Indie Flower", cursive;
+  margin-top: 30px;
 }
 </style>
