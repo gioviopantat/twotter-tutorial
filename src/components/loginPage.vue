@@ -9,7 +9,7 @@
     <form class="loginForm">
       <kinesis-container class="h1-container">
         <kinesis-element :strength="20">
-          <h1>WHAT UP PAL ! <br />Give Me Your Information</h1>
+          <h1>{{ h1Text }}<br />Give Me Your Information</h1>
         </kinesis-element>
       </kinesis-container>
       <v-text-field

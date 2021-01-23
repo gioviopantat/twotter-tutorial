@@ -7,25 +7,25 @@
       <!-- <background/> -->
       <!-- <index/> -->
       <!-- <car/> -->
-      <loginPage/>
+      <loginPage />
     </v-main>
   </v-app>
 </template>
 
 <script>
 // import Parallax1 from './components/Parallax1.vue';
-import Vue from 'vue';
-import VueKinesis from 'vue-kinesis';
-import loginPage from './components/loginPage.vue';
+import Vue from "vue";
+import VueKinesis from "vue-kinesis";
+import loginPage from "./components/loginPage.vue";
 // import car from './components/car';
 
-Vue.use(VueKinesis)
+Vue.use(VueKinesis);
 // import HelloWorld from './components/HelloWorld';
 // import pagination from './components/pagination';
 // import background from './components/background';
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     // Parallax1,
@@ -34,11 +34,9 @@ export default {
     // background,
     // car,
     // index,
-    loginPage
+    loginPage,
   },
 
-  data: () => ({
-
-  })
+  data: () => ({}),
 };
 </script>
