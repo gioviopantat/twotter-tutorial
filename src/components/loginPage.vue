@@ -5,20 +5,21 @@
       href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
       rel="stylesheet"
     />
+    <v-btn class="floating-button1" elevation="5" fab></v-btn>
     <form class="loginForm">
       <kinesis-container class="h1-container">
         <kinesis-element :strength="20">
-          <h1>WHAT UP PAL</h1>
+          <h1>WHAT UP PAL ! <br />Give Me Your Information</h1>
         </kinesis-element>
       </kinesis-container>
       <v-text-field
-        v-model="name"
-        :error-messages="nameErrors"
+        v-model="username"
+        :error-messages="usernameErrors"
         :counter="20"
-        label="Name"
+        label="Username"
         required
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
+        @input="$v.username.$touch()"
+        @blur="$v.username.$touch()"
       ></v-text-field>
       <v-text-field
         v-model="email"
@@ -54,7 +55,7 @@ export default {
   mixins: [validationMixin],
 
   validations: {
-    name: { required, maxLength: maxLength(10) },
+    username: { required, maxLength: maxLength(10) },
     email: { required, email },
     select: { required },
     checkbox: {
@@ -66,16 +67,16 @@ export default {
   name: "loginPage",
 
   data: () => ({
-    name: "",
+    username: "",
     email: "",
   }),
   computed: {
-    nameErrors() {
+    usernameErrors() {
       const errors = [];
-      if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.maxLength &&
-        errors.push("Name must be at most 20 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
+      if (!this.$v.username.$dirty) return errors;
+      !this.$v.username.maxLength &&
+        errors.push("Username must be at most 20 characters long");
+      !this.$v.username.required && errors.push("Name is required.");
       return errors;
     },
     emailErrors() {
@@ -93,7 +94,7 @@ export default {
     },
     clear() {
       this.$v.$reset();
-      this.name = "";
+      this.username = "";
       this.email = "";
     },
   },
@@ -119,5 +120,9 @@ export default {
 }
 .button-submit-clear {
   margin-top: 30px;
+}
+.floating-button1 {
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 </style>
