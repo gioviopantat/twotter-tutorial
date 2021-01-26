@@ -9,7 +9,7 @@
     <form class="loginForm">
       <kinesis-container class="h1-container">
         <kinesis-element :strength="20">
-          <h1>{{ h1Text }}<br />Give Me Your Information</h1>
+          <h1 @mouseover="hover" @mouseleave="leave">{{ h1Text }}<br />Give Me Your Information</h1>
         </kinesis-element>
       </kinesis-container>
       <v-text-field
@@ -69,6 +69,7 @@ export default {
   data: () => ({
     username: "",
     email: "",
+    h1Text: 'WHAT UP PAL'
   }),
   computed: {
     usernameErrors() {
@@ -97,6 +98,12 @@ export default {
       this.username = "";
       this.email = "";
     },
+    hover: function() {
+      this.h1Text = 'LEAVE ME ALONE';
+    },
+    leave: function() {
+      this.h1Text = 'WHAT UP PAL';
+    }
   },
 };
 </script>
