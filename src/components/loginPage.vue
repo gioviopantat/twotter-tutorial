@@ -9,7 +9,9 @@
     <form class="loginForm">
       <kinesis-container class="h1-container">
         <kinesis-element :strength="20">
-          <h1 @mouseover="hover" @mouseleave="leave">{{ h1Text }}<br />Give Me Your Information</h1>
+          <h1 @mouseover="hover" @mouseleave="leave">
+            {{ h1Text }}<br />Give Me Your Information
+          </h1>
         </kinesis-element>
       </kinesis-container>
       <v-text-field
@@ -69,7 +71,7 @@ export default {
   data: () => ({
     username: "",
     email: "",
-    h1Text: 'WHAT UP PAL'
+    h1Text: "WHAT UP PAL",
   }),
   computed: {
     usernameErrors() {
@@ -98,25 +100,28 @@ export default {
       this.username = "";
       this.email = "";
     },
-    hover: function() {
-      this.h1Text = 'LEAVE ME ALONE';
+    hover() {
+      this.h1Text = "LEAVE ME ALONE";
     },
-    leave: function() {
-      this.h1Text = 'WHAT UP PAL';
-    }
+    leave() {
+      this.h1Text = "WHAT UP PAL";
+    },
+    click1() {
+      console.log("clicked");
+    },
   },
 };
 </script>
 
 <style scoped>
 ::v-deep .v-text-field {
-  width: 400px;
+  width: 80%;
   margin-left: 10%;
   margin-top: 40px;
 }
 .loginForm {
-  width: 500px;
-  height: 600px;
+  width: 30%;
+  height: 65%;
   background: white;
   text-align: center;
   padding-top: 50px;
@@ -126,10 +131,14 @@ export default {
   font-family: "Indie Flower", cursive;
 }
 .button-submit-clear {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .floating-button1 {
   margin-left: 5px;
   margin-bottom: 5px;
+}
+.pic1 {
+  width: 20%;
+  height: 20%;
 }
 </style>
