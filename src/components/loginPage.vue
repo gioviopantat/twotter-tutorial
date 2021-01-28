@@ -71,7 +71,7 @@ export default {
   data: () => ({
     username: "",
     email: "",
-    h1Text: "Station",
+    h1Text: "WHAT UP PAL",
   }),
   computed: {
     usernameErrors() {
